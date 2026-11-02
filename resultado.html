@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Seu perfil profissional e as carreiras em tecnologia recomendadas para você.">
+  <title>Seu perfil — Career Dreamer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/dados-exemplo.js" defer></script>
+  <script src="js/resultado.js" defer></script>
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container topo__conteudo">
+      <a href="index.html" class="marca">
+        <span class="marca__simbolo" aria-hidden="true">cd</span>
+        <span>Career Dreamer</span>
+      </a>
+      <a href="index.html" class="botao botao--secundario">Novo mapeamento</a>
+    </div>
+  </header>
+
+  <main class="container pagina-resultado">
+
+    <section id="resultado" aria-labelledby="titulo-resultado" hidden>
+      <h1 id="titulo-resultado">Perfil de <span id="nome-usuario"></span></h1>
+      <p id="sintese" class="sintese"></p>
+
+      <h2 class="subtitulo">Carreiras recomendadas</h2>
+      <ol id="lista-carreiras" class="lista-carreiras"></ol>
+    </section>
+
+    <section id="sem-resultado" class="cartao vazio" aria-labelledby="titulo-vazio" hidden>
+      <h1 id="titulo-vazio">Nenhum perfil para mostrar</h1>
+      <p>Preencha o formulário para gerar suas recomendações de carreira.</p>
+      <a href="index.html" class="botao">Preencher formulário</a>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Projeto acadêmico — Análise e Desenvolvimento de Sistemas.</p>
+    </div>
+  </footer>
+
+  <!-- Modelo de card: o JavaScript clona e preenche para cada carreira -->
+  <template id="modelo-carreira">
+    <li class="cartao carreira">
+      <article>
+        <p class="carreira__selo" hidden>Melhor combinação</p>
+        <div class="carreira__topo">
+          <h3 class="carreira__titulo"></h3>
+          <p class="carreira__nota">
+            <span class="carreira__percentual"></span>
+            <span class="carreira__legenda">de compatibilidade</span>
+          </p>
+        </div>
+        <div class="barra" aria-hidden="true"><span class="barra__nivel"></span></div>
+        <p class="carreira__resumo"></p>
+
+        <h4>Competências-chave</h4>
+        <ul class="chips"></ul>
+
+        <h4>Roteiro de estudos</h4>
+        <ol class="roteiro"></ol>
+      </article>
+    </li>
+  </template>
+
+</body>
+</html>

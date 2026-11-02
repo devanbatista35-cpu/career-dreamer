@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Conte seus hobbies e interesses e descubra carreiras em tecnologia que combinam com você.">
+  <title>Career Dreamer — Descubra sua carreira em tecnologia</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <div class="topo">
+    <div class="container topo__conteudo">
+      <div>
+        <a href="index.html" class="marca">
+          <div class="marca__simbolo">cd</div>
+          <div>Career Dreamer</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pagina-inicial">
+    <div class="apresentacao">
+      <div class="titulo-principal">Descubra carreiras em tecnologia que combinam com você</div>
+      <div class="apresentacao__texto">
+        Conte o que você gosta de fazer no tempo livre e o que desperta sua curiosidade.
+        Em poucos segundos você recebe um mapa de carreiras com o que estudar primeiro.
+      </div>
+
+      <div class="subtitulo">Como funciona o Mapeamento Vocasional</div>
+      <div class="passos">
+        <div class="passo">Preencha seu nome, hobbies e interêsses.</div>
+        <div class="passo">Nossa análise cruza suas respostas com perfis de carreira.</div>
+        <div class="passo">Você recebe as carreiras mais compatíveis e um roteiro de estudos.</div>
+      </div>
+    </div>
+
+    <div class="cartao">
+      <div class="subtitulo-cartao">Seu perfil</div>
+
+      <form id="form-perfil" class="formulario">
+        <div class="campo">
+          <div>
+            <label>Nome</label>
+          </div>
+          <div>
+            <input type="number" id="nome" name="nome" placeholder="Ex.: Aline Santos">
+          </div>
+        </div>
+
+        <div class="campo">
+          <div>
+            <label>Hobbies</label>
+          </div>
+          <div>
+            <textarea id="hobbies" name="hobbies" rows="3"
+                      placeholder="Ex.: jogar videogame, desenhar, organizar eventos"></textarea>
+          </div>
+          <div class="dica">Separe cada hobby com vírgula.</div>
+        </div>
+
+        <div class="campo">
+          <div>
+            <label>Áreas de interêsse</label>
+          </div>
+          <div>
+            <textarea id="interesses" name="interesses" rows="3"
+                      placeholder="Ex.: design de interfaces, desenvolvimento web"></textarea>
+          </div>
+          <div class="dica">Separe cada interesse com vírgula.</div>
+        </div>
+
+        <button type="button" class="botao">Descobrir minha carreira</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="rodape">
+    <div class="container">
+      <p>Projeto acadêmico — Análise e Desenvolvimento de Sistemas.
+        <a href="resultado.html?exemplo">Ver um resultado de exemplo</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

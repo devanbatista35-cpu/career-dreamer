@@ -1,0 +1,461 @@
+/* ==========================================================================
+   Career Dreamer — folha de estilos única
+   Organização: 1. Variáveis  2. Base  3. Layout  4. Componentes
+                5. Página inicial  6. Página de resultado  7. Acessibilidade
+   ========================================================================== */
+
+/* 1. Variáveis ----------------------------------------------------------- */
+:root {
+  --cor-papel: #f6f7fb;
+  --cor-superficie: #ffffff;
+  --cor-tinta: #1b2140;
+  --cor-tinta-suave: #545c7a;
+  --cor-borda: #d9ddec;
+  --cor-primaria: #2f4bd8;
+  --cor-primaria-escura: #2338a8;
+  --cor-marca-texto: #ffe066;
+  --cor-sucesso: #127a54;
+  --cor-erro: #c0362c;
+
+  --fonte-titulo: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, sans-serif;
+  --fonte-texto: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --raio-pequeno: 8px;
+  --raio-grande: 18px;
+  --largura-max: 70rem;
+}
+
+/* 2. Base ---------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cor-papel);
+  color: var(--cor-tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.5em;
+  font-family: var(--fonte-titulo);
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--cor-primaria);
+}
+
+*:focus {
+  outline: none;
+}
+
+/* 3. Layout -------------------------------------------------------------- */
+.container {
+  width: 960px;
+  margin-inline: auto;
+}
+
+main {
+  flex: 1;
+}
+
+.topo {
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.topo__conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.9rem;
+}
+
+.rodape {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--cor-borda);
+  color: var(--cor-tinta-suave);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.rodape p {
+  margin: 0;
+}
+
+/* 4. Componentes --------------------------------------------------------- */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cor-tinta);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.marca__simbolo {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--cor-marca-texto);
+  font-size: 0.95rem;
+}
+
+.cartao {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-grande);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.subtitulo {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5em;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+}
+
+.subtitulo-cartao {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.4rem;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 999px;
+  background: var(--cor-primaria);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.botao:hover:not(:disabled) {
+  background: var(--cor-primaria-escura);
+  border-color: var(--cor-primaria-escura);
+}
+
+.botao:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.botao--secundario {
+  white-space: nowrap;
+  background: transparent;
+  color: var(--cor-primaria);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.botao--secundario:hover:not(:disabled) {
+  background: var(--cor-primaria);
+  color: #ffffff;
+}
+
+/* Formulário */
+.formulario {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-weight: 700;
+  color: #cfd3e3;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  background: var(--cor-papel);
+  color: var(--cor-tinta);
+  font: inherit;
+}
+
+.campo textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+  color: #6e7590;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  background: var(--cor-superficie);
+}
+
+.campo input:user-invalid,
+.campo textarea:user-invalid {
+  border-color: var(--cor-erro);
+}
+
+.dica {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--cor-tinta-suave);
+}
+
+/* Modal (elemento <dialog> nativo) */
+.modal {
+  width: min(26rem, 100% - 2rem);
+  padding: 1.75rem;
+  border: 0;
+  border-top: 6px solid var(--cor-marca-texto);
+  border-radius: var(--raio-grande);
+  background: var(--cor-superficie);
+  color: var(--cor-tinta);
+  box-shadow: 0 20px 50px rgb(27 33 64 / 0.25);
+}
+
+.modal::backdrop {
+  background: rgb(27 33 64 / 0.55);
+}
+
+.modal__acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+/* 5. Página inicial ------------------------------------------------------ */
+.pagina-inicial {
+  display: grid;
+  gap: 2rem;
+  padding-block: 2.5rem;
+}
+
+.apresentacao h1,
+.titulo-principal {
+  margin: 0 0 0.5em;
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+}
+
+.apresentacao__texto {
+  max-width: 46ch;
+  font-size: 1.1rem;
+  color: var(--cor-tinta-suave);
+}
+
+.passos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: passo;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 42ch;
+}
+
+.passos li,
+.passos .passo {
+  counter-increment: passo;
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.passos li::before,
+.passos .passo::before {
+  content: counter(passo);
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--cor-tinta);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+@media (min-width: 860px) {
+  .pagina-inicial {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: start;
+    gap: 4rem;
+    padding-block: 4rem;
+  }
+}
+
+/* 6. Página de resultado ------------------------------------------------- */
+.pagina-resultado {
+  padding-block: 2.5rem 4rem;
+}
+
+.pagina-resultado h1 {
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+}
+
+.sintese {
+  max-width: 60ch;
+  font-size: 1.15rem;
+  color: var(--cor-tinta-suave);
+}
+
+.lista-carreiras {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.carreira--principal {
+  border: 2px solid var(--cor-tinta);
+}
+
+.carreira__selo {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: var(--cor-marca-texto);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.carreira__topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.carreira__titulo {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.carreira__nota {
+  margin: 0;
+  color: var(--cor-sucesso);
+}
+
+.carreira__percentual {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.carreira__legenda {
+  font-size: 0.875rem;
+}
+
+.barra {
+  height: 10px;
+  margin-block: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--cor-papel);
+  overflow: hidden;
+}
+
+.barra__nivel {
+  display: block;
+  width: var(--nivel, 0%);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--cor-marca-texto);
+  transition: width 0.8s ease-out;
+}
+
+.carreira__resumo {
+  max-width: 65ch;
+}
+
+.carreira h4 {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+}
+
+.chips {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips li {
+  padding: 0.2rem 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.roteiro {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--cor-tinta-suave);
+}
+
+.vazio {
+  max-width: 34rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* 7. Acessibilidade ------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
