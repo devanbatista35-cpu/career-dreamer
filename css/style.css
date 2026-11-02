@@ -191,7 +191,7 @@ main {
 /* Formulário */
 .formulario {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1.25rem;
 }
 
