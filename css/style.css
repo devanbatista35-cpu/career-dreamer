@@ -66,13 +66,17 @@ a {
 }
 
 *:focus {
-  outline: none;
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 3px;
 }
 
 /* 3. Layout -------------------------------------------------------------- */
 .container {
-  width: 960px;
-  margin-inline: auto;
+  width: 100%;
+  min-width: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 main {
@@ -450,7 +454,57 @@ main {
   text-align: center;
 }
 
-/* 7. Acessibilidade ------------------------------------------------------ */
+/* 7. Ajustes para celulares ------------------------------------------------- */
+@media (max-width: 600px) {
+
+    .container {
+        padding-inline: 16px;
+    }
+
+    .pagina-inicial {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        padding-block: 1.5rem;
+    }
+
+    .apresentacao,
+    .cartao {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .titulo-principal {
+        font-size: clamp(1.8rem, 7vw, 2.3rem);
+        max-width: 100%;
+    }
+
+    .apresentacao__texto {
+        font-size: 1rem;
+    }
+
+    .cartao {
+        padding: 1.25rem;
+    }
+
+    .botao {
+        width: 100%;
+        text-align: center;
+    }
+
+    .marca {
+        white-space: normal;
+    }
+
+    .carreira__topo {
+        align-items: flex-start;
+    }
+
+    .carreira__percentual {
+        font-size: 1.6rem;
+    }
+}
+
+/* 8. Acessibilidade ------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
