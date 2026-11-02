@@ -3,7 +3,7 @@
  * Lê os dados do formulário e (futuramente) envia para a API.
  */
 const formulario = document.querySelector('#form-perfil');
-
+const modalAviso = document.querySelector('#modal-aviso');
 /**
  * Transforma "jogar, , desenhar ,," em ["jogar", "desenhar"]:
  * remove espaços das pontas e descarta itens vazios.
@@ -65,5 +65,5 @@ formulario.addEventListener('submit', (evento) => {
 
   // TODO: enviar o perfil para a API configurada em CONFIG.API_URL
   // e levar o usuário para a página resultado.html.
-  alert('Tente mais tarde');
+  modalAviso.showModal();
 });
