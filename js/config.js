@@ -6,7 +6,7 @@
  * Enquanto API_URL estiver vazia, o formulário mostra o aviso "Tente mais tarde".
  */
 const CONFIG = Object.freeze({
-  API_URL: '',
+  API_URL: 'https://google-career-dreamer-api.onrender.com/docs',
   TEMPO_LIMITE_MS: 60000, // servidores gratuitos (ex.: Render) podem levar ~1 min para "acordar"
   CHAVE_RESULTADO: 'careerDreamer:resultado',
 });
